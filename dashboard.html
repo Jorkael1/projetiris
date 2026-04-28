@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Vendeur - TerrainVente</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">TerrainVente</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-btn"> Accueil</a>
+          <a href="catalogue.html" class="nav-btn"> Catalogue</a>
+          <a href="a-propos.html" class="nav-btn"> À propos</a>
+          <span class="vendor-welcome"
+            >Bienvenue, <strong id="vendor-name">Vendeur</strong></span
+          >
+          <button class="btn-logout" id="btn-logout">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Logout.svg/48px-Logout.svg.png"
+              alt="Déconnexion"
+              style="width: 16px; height: 16px"
+            />
+            Déconnexion
+          </button>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html"> Accueil</a>
+        <a href="catalogue.html"> Catalogue</a>
+        <a href="a-propos.html"> À propos</a>
+        <a href="#" class="vendor-welcome"
+          >Bienvenue, <strong id="vendor-name">Vendeur</strong></a
+        >
+      </div>
+    </header>
+
+    <main>
+      <div class="dashboard-header">
+        <h1>Mes Terrains</h1>
+        <button class="btn-add" id="btn-add-terrain">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Plus_icon.svg/48px-Plus_icon.svg.png"
+            alt="Ajouter"
+            style="width: 20px; height: 20px"
+          />
+          Ajouter un terrain
+        </button>
+      </div>
+
+      <!-- Liste des terrains du vendor -->
+      <div class="dashboard-terrains" id="vendor-terrains"></div>
+
+      <!-- Section Messages -->
+      <div class="messages-section">
+        <h2>Messages des acheteurs</h2>
+        <div id="messages-list"></div>
+      </div>
+    </main>
+
+    <!-- Modal Ajouter/Modifier Terrain -->
+    <div class="modal" id="modal-add">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Ajouter un terrain</h2>
+          <button class="btn-close" id="btn-close-modal">&times;</button>
+        </div>
+        <form id="form-add-terrain">
+          <div class="form-group">
+            <label for="titre">Titre du terrain *</label>
+            <input
+              type="text"
+              id="titre"
+              required
+              placeholder="Ex: Terrain constructible à Dschang"
+            />
+          </div>
+          <div class="form-group">
+            <label for="prix">Prix (CFA) *</label>
+            <input type="number" id="prix" required placeholder="Ex: 5000000" />
+          </div>
+          <div class="form-group">
+            <label for="surface">Surface (m²) *</label>
+            <input type="number" id="surface" required placeholder="Ex: 500" />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              rows="3"
+              placeholder="Description du terrain..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone *</label>
+            <input
+              type="tel"
+              id="telephone"
+              required
+              placeholder="+221771234567"
+            />
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">Lien WhatsApp (optionnel)</label>
+            <input
+              type="url"
+              id="whatsapp"
+              placeholder="https://wa.me/221771234567"
+            />
+          </div>
+          <div class="form-group">
+            <label>Localisation * (cliquez sur la carte)</label>
+            <div id="location-picker"></div>
+            <input type="hidden" id="lat-input" />
+            <input type="hidden" id="lng-input" />
+          </div>
+          <button type="submit" class="btn-submit">
+            Enregistrer le terrain
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TerrainVente</h3>
+          <p>
+            Votre plateforme de confiance pour l'achat et la vente de terrains
+            dans la ville de Dschang.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="login.html">Espace vendeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 contact@terrainvente.com</li>
+            <li>📞 +221 77 123 45 67</li>
+            <li>📍 Dschang, Cameroun</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TerrainVente. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="LinkedIn">💼</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

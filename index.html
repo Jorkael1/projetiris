@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerrainVente - Achat de terrains</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.ttcom/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">TerrainVente</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-btn"> Accueil</a>
+          <a href="catalogue.html" class="nav-btn"> Catalogue</a>
+          <a href="a-propos.html" class="nav-btn"> À propos</a>
+          <a href="login.html" class="nav-btn nav-cta">connexion</a>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html"> Accueil</a>
+        <a href="catalogue.html"> Catalogue</a>
+        <a href="a-propos.html"> À propos</a>
+        <a href="login.html">connexion</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section - Message attractif -->
+      <section class="hero-home">
+        <div class="hero-content">
+          <h1>Trouvez le terrain de vos rêves à Dschang</h1>
+          <p class="hero-tagline">
+            Achetez ou vendez votre terrain à Dschang en 48h sans stress, sans
+            commission cachée. La référence locale depuis 2023.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Terrains disponibles</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">200+</span>
+              <span class="stat-label">Vendeurs vérifiés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Gratuit pour les acheteurs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toggle Vue Carte/Liste -->
+      <div class="view-toggle">
+        <button id="btn-carte">Carte</button>
+        <button id="btn-liste" class="active">Liste</button>
+      </div>
+
+      <!-- Carte interactive -->
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+
+      <!-- Liste des terrains -->
+      <div id="terrains-list"></div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TerrainVente</h3>
+          <p>
+            Votre plateforme de confiance pour l'achat et la vente de terrains
+            dans la ville de Dschang.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="login.html">Espace vendeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 contact@terrainvente.com</li>
+            <li>📞 +221 77 123 45 67</li>
+            <li>📍 Dschang, Cameroun</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TerrainVente. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="LinkedIn">💼</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

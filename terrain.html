@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Détails du terrain - TerrainVente</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="terrain.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">TerrainVente</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-btn"> Accueil</a>
+          <a href="catalogue.html" class="nav-btn"> Catalogue</a>
+          <a href="a-propos.html" class="nav-btn"> À propos</a>
+          <a href="login.html" class="nav-btn nav-cta"
+            >Vendeur? Connectez-vous</a
+          >
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html"> Accueil</a>
+        <a href="catalogue.html"> Catalogue</a>
+        <a href="a-propos.html"> À propos</a>
+        <a href="login.html">Vendeur? Connectez-vous</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="terrain-detail">
+        <!-- Galerie photos -->
+        <div class="gallery">
+          <img id="gallery-img" src="" alt="Photo du terrain" />
+          <!-- IMAGE: Photo principale du terrain -->
+          <div class="gallery-nav">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+          </div>
+        </div>
+
+        <div class="terrain-detail-info">
+          <h1 id="detail-titre">Chargement...</h1>
+          <div class="terrain-detail-price" id="detail-prix"></div>
+
+          <div class="terrain-detail-details">
+            <span
+              >📐 <strong>Surface:</strong> <span id="detail-surface"></span
+            ></span>
+          </div>
+
+          <p
+            id="detail-description"
+            style="margin: 1rem 0; color: var(--gray-700)"
+          ></p>
+
+          <!-- Carte localisée -->
+          <div id="detail-map"></div>
+
+          <!-- Section Contact -->
+          <div class="contact-section">
+            <button class="btn-contact" id="btn-contact">
+              📞 Contacter le vendeur
+            </button>
+
+            <div class="contact-info" id="contact-info">
+              <p><strong>Téléphone:</strong> <span id="tel-display"></span></p>
+              <div class="contact-buttons">
+                <button class="btn-copy" id="btn-copy">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Phone_icon.svg/48px-Phone_icon.svg.png"
+                    alt="Copier"
+                  />
+                  Copier le numéro
+                </button>
+                <a
+                  class="btn-whatsapp"
+                  id="whatsapp-link"
+                  href="#"
+                  target="_blank"
+                  style="text-decoration: none; display: none"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/48px-WhatsApp.svg.png"
+                    alt="WhatsApp"
+                  />
+                  Envoyer sur WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TerrainVente</h3>
+          <p>
+            Votre plateforme de confiance pour l'achat et la vente de terrains
+            en Afrique de l'Ouest.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="login.html">Espace vendeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 contact@terrainvente.com</li>
+            <li>📞 +221 77 123 45 67</li>
+            <li>📍 Dschang, Cameroun</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TerrainVente. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="LinkedIn">💼</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

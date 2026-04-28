@@ -1,0 +1,89 @@
+/* --- Page Détail Terrain --- */
+.terrain-detail {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery {
+  position: relative;
+  height: 300px;
+  background: var(--gray-200);
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* IMAGE: Photo principale du terrain */
+}
+
+.gallery-nav {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gallery-nav button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.gallery-nav button.active {
+  background: var(--primary);
+}
+
+.terrain-detail-info {
+  padding: 1.5rem;
+}
+
+.terrain-detail-info h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.terrain-detail-price {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.terrain-detail-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--gray-700);
+}
+
+#detail-map {
+  height: 200px;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .terrain-detail {
+    border-radius: 0;
+  }
+
+  .gallery {
+    height: 250px;
+  }
+
+  .terrain-detail-info {
+    padding: 1rem;
+  }
+
+  .terrain-detail-info h1 {
+    font-size: 1.25rem;
+  }
+}

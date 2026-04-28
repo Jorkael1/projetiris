@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion Vendeur - TerrainVente</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">TerrainVente</div>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-btn"> Accueil</a>
+          <a href="catalogue.html" class="nav-btn"> Catalogue</a>
+          <a href="a-propos.html" class="nav-btn"> À propos</a>
+        </nav>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html"> Accueil</a>
+        <a href="catalogue.html"> Catalogue</a>
+        <a href="a-propos.html"> À propos</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="auth-container">
+        <h1>Connexion Vendeur</h1>
+        <form id="form-login">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="votre@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="motdepasse">Mot de passe</label>
+            <input
+              type="password"
+              id="motdepasse"
+              required
+              placeholder="Votre mot de passe"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Se connecter</button>
+        </form>
+        <div class="auth-links">
+          <p>Pas de compte? <a href="register.html">S'inscrire</a></p>
+          <p><a href="index.html">← Retour à l'accueil</a></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>TerrainVente</h3>
+          <p>
+            Votre plateforme de confiance pour l'achat et la vente de terrains
+            dans la ville de Dschang.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="login.html">Espace vendeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 contact@terrainvente.com</li>
+            <li>📞 +221 77 123 45 67</li>
+            <li>📍 Dschang, Cameroun</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Conditions générales</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TerrainVente. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Twitter">🐦</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="LinkedIn">💼</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
